@@ -1,0 +1,25 @@
+<html>
+	<head>
+    	<title>Inline JS</title>
+	</head>
+
+	<body>
+    	<script>
+		var myNameIs = 'Felice';
+
+		function sayHello (fname) {
+			console.log ('Hello from ' + myNameIs + '.');
+		}
+		sayHello (myNameIs);
+
+		var random = Math.floor((Math.random()*100)+1);
+
+		function isOdd (number) {
+			var remainder = (number % 2 == 0) ? console.log ('This number is even.') : console.log ('This number is odd.');
+		}
+		isOdd (random);
+		console.log (random);
+		</script>
+		
+</body>
+</html>
