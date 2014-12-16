@@ -1,0 +1,25 @@
+<html>
+	<head>
+    	<title>Scope</title>
+	</head>
+
+	<body>
+    	<script>
+
+		(function () {
+			var myNameIs = 'Felice';
+			console.log ('Hello from ' + myNameIs + '.');
+		})();
+		// sayHello (myNameIs);
+
+
+		(function () {
+		var number = Math.floor((Math.random()*100)+1);
+			var remainder = (number % 2 == 0) ? console.log ('This number is even.') : console.log ('This number is odd.');
+			console.log (number);
+		})();
+		// isOdd (random);
+		</script>
+		
+	</body>
+</html>
