@@ -24,41 +24,60 @@
         culpa qui officia deserunt mollit anim id est laborum.
     </p>
 
-	<script>
-		// todo: get the main header element by id
+    <button id = 'btn1'>Hello World</button>
+    <button id = 'btn2'>Hello Again</button>
+    <button id = 'btn3'>List Items</button>
+    <button id = 'btn4'>Paragraph</button>
+    
+    <script>
+        // todo: get the main header element by id
         var mainHeader = document.getElementById('main-header');
-
         // todo: set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = 'Javascript is Cool';
+        // 12/18 add buttons with click event listeners
+        var btn1Event = function () {
+            mainHeader.innerHTML = 'Javascript is Cool';
+        };
+        btn1.addEventListener ('click', btn1Event);
+
 
         // todo: get the sub header element by id
         var subHeader = document.getElementById('sub-header');
-        // console.log(subHeader);
-
         // todo: set the text color of subHeader to blue
-        subHeader.style['color'] = 'blue';
+        // 12/18 add buttons with click event listeners
+        var btn2Event = function () {
+            subHeader.style['color'] = 'blue';
+        };
+        btn2.addEventListener ('click', btn2Event);
+
 
         // todo: get all list items
         var listItems = document.getElementsByTagName('li');
 
         // todo: set text color on every other list item to grey
         // todo: set text color of li with dbid = 1 to blue
-        for (var i = 0; i < listItems.length; i+=2) {
-        	var dbId = listItems[i].attributes['data-dbid'].value;
-        	if (dbId % 2 == 1) {
-        		listItems[i].style['color'] = 'grey';	
-        	}
-        	if (dbId == 1) {
-        		listItems[i].style['color'] = 'blue';
-        	}
-    	}
+        // 12/18 add buttons with click event listeners
+        var btn3Event = function () {
+            for (var i = 0; i < listItems.length; i++) {
+            	var dbId = listItems[i].attributes['data-dbid'].value;
+            	if (dbId % 2 == 1) {
+            		listItems[i].style['color'] = 'grey';	
+            	}
+            	if (dbId == 1) {
+            		listItems[i].style['color'] = 'blue';
+            	}
+            }
+    	};
+        btn3.addEventListener ('click', btn3Event);
 
    
         // todo: get all elements with class name sub-paragraph
         // todo: change the text in the first sub paragraph to "Mission Accomplished!"
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
-        subParagraphs[0].innerText = 'Mission Accomplished!';
-
+        // 12/18 add buttons with click event listeners
+        var btn4Event = function () {
+            subParagraphs[0].innerText = 'Mission Accomplished!';
+        };
+        btn4.addEventListener ('click', btn4Event);
 
 	</script>
 </body>
