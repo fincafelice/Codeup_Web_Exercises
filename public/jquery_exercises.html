@@ -10,16 +10,22 @@
 			Here are some reasons to use them together:
 		</p>
 		<ul class="style">
-			<li id="1">It's easier.</li>
-			<li id="2">It's easier.</li>
-			<li id="3">It's easier.</li>
+			<li>It's easier.</li>
+			<li>It's easier.</li>
+			<li>It's easier.</li>
 		</ul>
 	</div>
 	<script src="/js/jquery.min.js"></script>
 	<script type = "text/javascript">
 		$(document).ready(function() {
     		console.log ( 'The DOM has finished loading!' );
-    		$('.style').css('background-color', '#FF0');
+    		$('li').css('font-size', '20px');
+    		$('li').css('background-color','#ce7ec7');
+    		$('h1').css('background-color','#ce7ec7');
+    		$('p').css('background-color','#ce7ec7');
+    		var title = $('h1').html();
+    		alert(title);
+
 		});
 	</script>
 
