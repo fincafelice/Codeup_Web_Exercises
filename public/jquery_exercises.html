@@ -20,11 +20,15 @@
 		$(document).ready(function() {
     		console.log ( 'The DOM has finished loading!' );
     		$('li').css('font-size', '20px');
-    		$('li').css('background-color','#ce7ec7');
-    		$('h1').css('background-color','#ce7ec7');
-    		$('p').css('background-color','#ce7ec7');
-    		var title = $('h1').html();
-    		alert(title);
+    		$('li, h1, p').css('border', '1px solid #000');
+    		$('li, h1, p').css('background-color', '#ce7ec7');
+    		// alternate code - var select = $(,);
+    		// alternate code, cont. - select.css(,);
+
+    		// $('h1').css('background-color','#ce7ec7');
+    		// $('p').css('background-color','#ce7ec7');
+    		// var title = $('h1').html();
+    		// alert(title);
 
 		});
 	</script>
