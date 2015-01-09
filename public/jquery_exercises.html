@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>JQuery</title>
+</head>
+<body>
+	<div>
+		<h1 id="title">Boom!</h1>
+		<p id="intro">
+			Why on earth would anyone want to use JavaScript without JQuery? 
+			Here are some reasons to use them together:
+		</p>
+		<ul id="list">
+			<li id="1">It's easier.</li>
+			<li id="2">It's easier.</li>
+			<li id="3">It's easier.</li>
+		</ul>
+	</div>
+	<script src="/js/jquery.min.js"></script>
+	<script type = "text/javascript">
+		$(document).ready(function() {
+    		console.log ( 'The DOM has finished loading!' );
+    		var contents = $('#title').html();
+    		alert(contents);
+    		var contents = $('#intro').html();
+    		alert(contents);
+    		var contents = $('#list').html();
+    		alert(contents);
+		});
+	</script>
+
+</body>
+</html>
