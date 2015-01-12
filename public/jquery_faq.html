@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>National Park JQuery Example</title>
+    <script src="/js/jquery.min.js"></script>
+    <style>
+
+    .invisible {
+        display: none;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    </style>
+    
+    <script>
+
+    $('document').ready(function() {
+        
+        $('dd').addClass('invisible');
+
+        $('#toggle-FAQ').click(function(event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+    });
+    </script>
+</head>
+<body>
+
+    <h1>National Parks FAQ</h1>
+    <dl id="national-parks">
+        <dt>Arches</dt>
+        <dd>This site features more than 2,000 natural sandstone arches, including the famous Delicate Arch. </dd>
+        <dt>Badlands</dt>
+        <dd>The Badlands are a collection of buttes, pinnacles, spires, and grass prairies.</dd>
+        <dt>Carlsbad Caverns</dt>
+        <dd>Carlsbad Caverns has 117 caves, the longest of which is over 120 miles (190 km) long. </dd>
+        <dt>Denali</dt>
+        <dd>Centered around Mount McKinley, the tallest mountain in North America, Denali is serviced by a single road leading to Wonder Lake. </dd>
+        <dt>Everglades</dt>
+        <dd>The Everglades are the largest subtropical wilderness in the United States.</dd>
+        <dt>Glacier</dt>
+        <dd>The U.S. half of Waterton-Glacier International Peace Park, this park hosts 26 glaciers and 130 named lakes beneath a stunning canopy of Rocky Mountain peaks.</dd>
+        <dt>Pinnacles</dt>
+        <dd>Named for the eroded leftovers of half of an extinct volcano, the park is famous for its massive black and gold monoliths of andesite and rhyolite.</dd>
+        <dt>Redwood</dt>
+        <dd>This park and the co-managed state parks protect almost half of all remaining Coastal Redwoods, the tallest trees on Earth.</dd>
+        <dt>Saguaro</dt>
+        <dd>Split into the separate Rincon Mountain and Tucson Mountain Districts, this park is evidence that the dry Sonoran Desert is still home to a great variety of life spanning six biotic communities. </dd>
+        <dt>Yosemite</dt>
+        <dd>Among the earliest candidates for National Park status, Yosemite features towering granite cliffs, dramatic waterfalls, and old-growth forests at a unique intersection of geology and hydrology.</dd> 
+    </dl>
+    <a href="#" id="toggle-FAQ">Click to toggle all FAQs.</a>
+
+    <script>
+    $('dt').click(function(){
+        $(this).next().toggleClass('invisible');
+    });
+
+    </script>
+    
+    
+</body>
+
+</html>
