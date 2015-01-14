@@ -24,8 +24,22 @@
             event.preventDefault();
             $('dd').toggleClass('invisible');
         });
+
+        $('ul').each(function() {
+            $(this).children().first().css('font-weight', 'bold');
+        });
+
+        // $('li').addClass('invisible');
+
+        $('.toggle-parent').click(function(event) {
+            event.preventDefault();
+            // $(this).parent().toggleClass('invisible');
+            $('li').toggleClass('invisible');
+
+        });
     });
     </script>
+
 </head>
 <body>
 
@@ -52,15 +66,35 @@
         <dt>Yosemite</dt>
         <dd>Among the earliest candidates for National Park status, Yosemite features towering granite cliffs, dramatic waterfalls, and old-growth forests at a unique intersection of geology and hydrology.</dd> 
     </dl>
-    <a href="#" id="toggle-FAQ">Click to toggle all FAQs.</a>
+    <a href="#" id="toggle-FAQ">Click to toggle Nat'l Park FAQs.</a>
 
     <script>
-    $('dt').click(function(){
-        $(this).next().toggleClass('invisible');
-    });
 
     </script>
+
+    <h3>Nat'l Park One</h3>
+    <ul class = "toggle-parent">
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
     
+    <h3>Nat'l Park Two</h3>
+    <ul class = "toggle-parent">
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
+    
+    <h3>Nat'l Park Three</h3>
+    <ul class = "toggle-parent">
+        <li>Fact 1</li>
+        <li>Fact 2</li>
+        <li>Fact 3</li>
+        <li>Fact 4</li>
+    </ul>
     
 </body>
 
