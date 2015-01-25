@@ -7,6 +7,22 @@ define ('DB_PASS', 'forest');
 
 require_once('../db_connect.php');
 
+class cleanPost
+{
+    public function __construct ($filename)
+    {
+        $this->filename = ($filename);
+    }
+
+    public function sanitize ($parks) 
+    {
+        foreach ($parks as $key => $value) {
+            $parks[$key] = htmlspecialchars(strip_tags($value));  // Overwrite each value.
+        }
+        return $parks;
+    }
+}
+$filename = 'national_parks.php';
 $count = $dbc->query('SELECT count(*) FROM national_parks')->fetchColumn();
 $limit = 3;
 $pageCount = ceil($count/$limit);
@@ -32,11 +48,15 @@ try {
     $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
     $stmt->execute();
     $parks = ($stmt->fetchAll(PDO::FETCH_ASSOC));
+    $parksObject = new cleanPost ($filename);
+    $cleanPost = $parksObject->sanitize($_POST);
 } catch (Exception $e) {
 	echo 'Caught Exception: ', $e->getMessage(), "\n";
 }
 
 if (!empty($_POST)) {
+    if (!empty($_POST['park_name']) && !empty($_POST['location']) && 
+        !empty($_POST['date_established']) && !empty($_POST['area_in_acres']) && !empty($_POST['description'])) {
 	$stmt = $query = 'INSERT INTO national_parks (park_name, location, date_established, area_in_acres, description) VALUES (:park_name, :location, :date_established, :area_in_acres, :description)';
 	$stmt = $dbc->prepare($query);
 
@@ -47,10 +67,16 @@ if (!empty($_POST)) {
     $stmt->bindValue(':description', 		$_POST['description'],      PDO::PARAM_STR);
 
     $stmt->execute();
-    echo" 
-    <script language = 'javascript'>
-        alert ('Your park was successfully added.');
-    </script>";
+        echo" 
+        <script language = 'javascript'>
+            alert ('Your park was successfully added.');
+        </script>";
+    } else {
+        echo"
+        <script language = 'javascript'>
+        alert ('Please enter all five statistics.');
+        </script>";
+    }
 }
 ?>
 
